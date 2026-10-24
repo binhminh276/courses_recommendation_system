@@ -1,0 +1,106 @@
+# ==============================================================================
+# Git Ignore Configuration for Courses Recommendation System
+# ==============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# Environment & Secret configurations
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+env/
+ENV/
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ==============================================================================
+# Data Files (Only preserve folder structure via .gitkeep)
+# ==============================================================================
+data/raw/*
+!data/raw/**/.gitkeep
+!data/raw/**/
+
+data/processed/*
+!data/processed/**/.gitkeep
+!data/processed/**/
+
+data/ner_datasets/*
+!data/ner_datasets/.gitkeep
+
+data/embedding_datasets/*
+!data/embedding_datasets/.gitkeep
+
+# Common data formats that might accidentally be placed in root or subdirs
+*.csv
+*.tsv
+*.xlsx
+*.parquet
+*.jsonl
+*.pickle
+*.pkl
+
+# ==============================================================================
+# Model Weights, Checkpoints & Large Artifacts
+# ==============================================================================
+models/ner_model/*
+!models/ner_model/.gitkeep
+
+models/embedding_model/*
+!models/embedding_model/.gitkeep
+
+models/hybrid_model/*
+!models/hybrid_model/.gitkeep
+
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.h5
+*.ckpt
+
+# ==============================================================================
+# Logs & Temporary Outputs
+# ==============================================================================
+logs/
+*.log
+
+# ==============================================================================
+# Legacy / Working Workspace Artifacts (Local migration in progress)
+# ==============================================================================
+Crawl/
+Docx/
+Embedding/
+Embedding_v2/
+Master_Registry/
+*.rar
+*.zip
+*.7z
+*.tar.gz
+*.docx
+*.pdf
+PROJECT_STRUCTURE.md
+TAI_LIEU_BAN_GIAO_QD.md
+pipeline_trich_xuat_graphdb.md
+writing-block.md
+Xu_ly_JD_NER.ipynb
+hybrid-embedding.ipynb
