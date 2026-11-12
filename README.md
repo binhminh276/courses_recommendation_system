@@ -8,58 +8,23 @@
 ## 📌 Cấu trúc dự án
 
 ```text
-TLCN-KLTN/
-│
-├── .gitignore                      # Cấu hình loại trừ file rác, dữ liệu nặng và mô hình
-├── .env.example                    # File mẫu biến môi trường (API keys)
-├── README.md                       # Tài liệu hướng dẫn dự án
-├── requirements.txt                # Danh sách thư viện phụ thuộc
-│
-├── configs/                        # File cấu hình tham số huấn luyện và hệ thống
-│
-├── data/                           # Dữ liệu dự án (quản lý qua Kaggle/Drive, chỉ giữ khung thư mục)
-│   ├── raw/                        # Dữ liệu thô thu thập từ crawlers
-│   │   ├── courses/                # Khóa học (Coursera, Udemy, edX, DataCamp, FutureLearn)
-│   │   ├── jobs/                   # Tin tuyển dụng (TopCV, ITviec, VietnamWorks, CareerViet,...)
-│   │   └── cv/                     # Hồ sơ ứng viên mẫu
-│   │
-│   ├── processed/                  # Dữ liệu đã làm sạch và chuẩn hóa schema
-│   │   ├── courses/
-│   │   ├── jobs/
-│   │   └── cv/
-│   │
-│   ├── ner_datasets/               # Dữ liệu gán nhãn thực thể (Entity Recognition)
-│   └── embedding_datasets/         # Dữ liệu Triplet huấn luyện Bi-Encoder
-│
-├── notebooks/                      # Jupyter Notebooks nghiên cứu, thử nghiệm & EDA
-│
-├── src/                            # Mã nguồn chính của hệ thống
-│   ├── __init__.py
-│   ├── crawlers/                   # Module cào dữ liệu
-│   │   ├── __init__.py
-│   │   ├── courses/                # Crawlers khóa học
-│   │   └── jobs/                   # Crawlers tin tuyển dụng
-│   │
-│   ├── preprocessing/              # Module tiền xử lý và chuẩn hóa dữ liệu
-│   │   ├── __init__.py
-│   │   ├── courses/                # Làm sạch, lọc kỹ năng & level khóa học
-│   │   ├── jobs/                   # Hợp nhất schema & ID tin tuyển dụng
-│   │   └── cv/                     # Trích xuất và chuẩn hóa CV
-│   │
-│   ├── ner/                        # Module nhận dạng thực thể (Skills, Degrees, Experience)
-│   └── embeddings/                 # Module tạo cặp Triplet, huấn luyện Bi-Encoder & Hybrid Search
-│
-├── models/                         # Trọng số mô hình sau huấn luyện (weights / checkpoints)
-│   ├── ner_model/                  # Checkpoint mô hình NER
-│   ├── embedding_model/            # Checkpoint mô hình Bi-Encoder Embedding
-│   └── hybrid_model/               # Cấu hình chỉ mục lai Dense + BM25
-│
-└── scripts/                        # Scripts thực thi quy trình đầu cuối (End-to-End)
-    ├── run_crawlers.py             # Script chạy cào dữ liệu
-    ├── run_etl_pipeline.py         # Script chạy quy trình ETL tiền xử lý
-    ├── run_train_ner.py            # Script huấn luyện mô hình NER
-    ├── run_train_embedding.py      # Script huấn luyện mô hình Embedding Triplet
-    └── run_demo.py                 # Script chạy thử nghiệm / Demo gợi ý
+courses_recommendation_system/
+├── .gitignore
+├── README.md
+├── assets/
+│   └── ablation_study_comparison.png
+├── docs/
+│   └── Bao_Cao_He_Thong_Goi_Y_Khoa_Hoc.docx
+└── notebooks/
+    ├── 01_cv_labelling.ipynb
+    ├── 02_training_ner_nlp.ipynb
+    ├── 03_create_master_skill_registry_graphdb.ipynb
+    ├── 04_hybrid_embedding_training.ipynb
+    ├── 05_create_benchmark_and_voting.ipynb
+    └── preprocessing_scripts/
+        ├── AWS_Preprocessing.py
+        ├── Coursera_Preprocessing.py
+        └── course_labeled.py
 ```
 
 ---
